@@ -3,6 +3,8 @@
 Problem Statement:
 
 In this project, you will solve a number of subset sum problems, with each child solving one instance of the problem. A simple definition of the subset sum problem is: Given a set of integers and a value sum, determine if there is a subset of the given set with sum equal to the given sum. Your project should consist of one program, which will fork off versions of itself to do some file processing. To do this, it will start by taking some command line arguments. Your executable should be called log Parse. You must implement at least the following command line arguments using getopt:-h-i inputfilename-o outputfilename-t time The option –h should display all legal command line options and how it is expected to run, as well as the default behavior. If input and output filenames are not specified, the defaults should be input.dat and output.dat. time specifies the maximum duration the code should run (default 10 seconds).Once you have parsed the command line arguments and validated them, then you should attempt to open the input file. It will start with a number on a line by itself, with that number indicating the amount of subtasks your program will have to solve using copies of your process created with fork. Every other line of the file will contain a subtask, which will consist of a list of integers. An example of this input file is below:
+
+
 3
 9 3 34 4 12 5 26 
 3 2 7 1 2
