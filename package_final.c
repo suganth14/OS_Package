@@ -12,22 +12,22 @@ char *op_f_name="output.dat";
 
 bool is_subset(int set[],int n,int sum)
 {
-	if(sum==0)
+	if(sum==0) //Base condition for recursion for valid subset
 	{
 		return true;
 	}
-	if(n==0&&sum!=0)
+	if(n==0&&sum!=0) //Base condition for recursion for invalid subset
 	{
 		return false;
 	}
-	if(set[n-1]>sum)
+	if(set[n-1]>sum) //if a particular element is greater than sum leave that element
 	{
 		return is_subset(set,n-1,sum);
 	}
-	return is_subset(set,n-1,sum)||is_subset(set,n-1,sum-set[n-1]);
+	return is_subset(set,n-1,sum)||is_subset(set,n-1,sum-set[n-1]); //main recursive call
 }
 
-void store(int A[],int size,int pid)
+void store(int A[],int size,int pid)//storing in file
 {
 	char temp[5];
 	char msg[50];
@@ -39,7 +39,7 @@ void store(int A[],int size,int pid)
 		strcat(msg,temp);
 		if(i!=size-1)
 		{
-			strcat(msg," + ");
+			strcat(msg," + ");//to represent addition of numbers eg 9 : instead of 5 4 , 5+4
 		}
 	}
 	strcat(msg,"\n");
@@ -51,7 +51,7 @@ void store(int A[],int size,int pid)
 
 void subset_sum(int s[],int t[],int s_size,int t_size,int sum,int ite,int const target_sum,int const pid)
 {
-	if(target_sum==sum)
+	if(target_sum==sum) //if the subset satisfy the sum send it to store in file
 	{
 		store(t,t_size,pid);
 		return;
